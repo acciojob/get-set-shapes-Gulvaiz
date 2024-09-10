@@ -1,31 +1,44 @@
 class Rectangle {
-     constructor(width,height){
-          this._width = width
-          this._height = height
-     }
+  constructor(width, height) {
+    this._width = width;
+    this._height = height;
+  }
 
-     get width(){
-          return `${this._width}`
-     }
+  get width() {
+    return this._width;
+  }
 
-     get height(){
-          return `${this._height}`
-     }
+  get height() {
+    return this._height;
+  }
 
-     getArea() {
-          const area = `${this._width}` * `${this.height}`
-     }
+  getArea() {
+    return this._width * this._height;
+  }
 }
 
-class Square extends Animal {
-     constructor(side){
-          this._side = side
-     }
+class Square extends Rectangle {
+  constructor(side) {
+    // Call the parent class constructor with side as both width and height
+    super(side, side);
+  }
 
-     getPerimeter(){
-          const perimeter = 4 * `${this._side}`
-     }
+  getPerimeter() {
+    return 4 * this.width;
+  }
 }
+
+// Example usage:
+const rectangle = new Rectangle(5, 10);
+console.log(rectangle.width); // Output: 5
+console.log(rectangle.height); // Output: 10
+console.log(rectangle.getArea()); // Output: 50
+
+const square = new Square(7);
+console.log(square.width); // Output: 7
+console.log(square.height); // Output: 7
+console.log(square.getArea()); // Output: 49
+console.log(square.getPerimeter()); // Output: 28
 
 // Do not change the code below this line
 window.Rectangle = Rectangle;
