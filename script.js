@@ -13,17 +13,17 @@ class Rectangle {
      }
 
      getArea() {
-          return (`${this._width}` * `${this.height}`)
+          const area = `${this._width}` * `${this.height}`
      }
 }
 
-class Square extends Rectangle {
+class Square extends Animal {
      constructor(side){
-          super(side,side)
+          this._side = side
      }
 
      getPerimeter(){
-          return (4 * `${this._side}`)
+          const perimeter = 4 * `${this._side}`
      }
 }
 
